@@ -1,4 +1,6 @@
 const path = require('path')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -6,6 +8,14 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'output')
+  },
+  devServer: {
+    hot: true, // 开启热更新；
+    port: 3500,
+    open: true,
+    static: {
+      directory: path.join(__dirname, "output")
+    },
   },
   module: {
     rules: [
@@ -23,5 +33,15 @@ module.exports = {
         use: 'babel-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(),// 使用插件
+    new HtmlWebpackPlugin({
+      title: 'ceshi',
+      meta: {
+          viewport: 'width=device-width'
+      },
+      template: './src/index.html'
+  })
+]
 }

@@ -10,7 +10,7 @@ import './index.css'
 
 
 const MyFuncComponent = () => {
-  return <div>函数组件</div>
+  return <div>函ss数组件</div>
 }
 
 ReactDOM.render(<MyFuncComponent />,document.getElementById('root'))
