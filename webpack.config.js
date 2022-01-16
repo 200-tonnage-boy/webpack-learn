@@ -9,29 +9,30 @@ module.exports = {
     filename: 'bundle.js',
     path: path.join(__dirname, 'output')
   },
-  devServer: {
-    hot: true, // 开启热更新；
-    port: 3500,
-    open: true,
-    static: {
-      directory: path.join(__dirname, "output")
-    },
-  },
+  devtool: false,
+  // devServer: {
+  //   hot: true, // 开启热更新；
+  //   port: 3500,
+  //   open: true,
+  //   static: {
+  //     directory: path.join(__dirname, "output")
+  //   },
+  // },
   module: {
     rules: [
-      {
-        test: /.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /.less$/,
-        use: ['style-loader', 'css-loader', 'less-loader']
-      },
-      {
-        test: /.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
-      }
+      // {
+      //   test: /.css$/,
+      //   use: ['style-loader', 'css-loader']
+      // },
+      // {
+      //   test: /.less$/,
+      //   use: ['style-loader', 'css-loader', 'less-loader']
+      // },
+      // {
+      //   test: /.(js|jsx)$/,
+      //   exclude: /node_modules/,
+      //   use: 'babel-loader'
+      // }
     ]
   },
   plugins: [
