@@ -1,0 +1,23 @@
+// .babelrc
+// {
+//   "presets": [
+//     "@babel/preset-env",
+//     "@babel/preset-react"
+//   ],
+//   "plugins": [
+//     [
+//       "@babel/plugin-transform-runtime",
+//       {
+//         "regenerator": true
+//       }
+//     ]
+//   ]
+
+// }
+
+{
+  "presets": [],
+  "plugins": ["./src/ArrowPlugin.js", "./src/ClassPlugin.js",  ["import", {
+    "libraryName": "lodash"// 自动完成lodash按需引入   500k----》 164byte
+  }]]
+}
