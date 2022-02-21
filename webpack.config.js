@@ -1,13 +1,14 @@
-const path = require('path')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReplacePlugin = require("./src/MyPlugin/replace-plugin");
 
 module.exports = {
-  mode: 'development',
-  entry: './src/main.js',
+  mode: "development",
+  entry: "./src/main.js",
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, 'output')
+    filename: "bundle.js",
+    path: path.join(__dirname, "output"),
   },
   devtool: false,
   // devServer: {
@@ -31,18 +32,19 @@ module.exports = {
       {
         test: /.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
-      }
-    ]
+        use: "babel-loader",
+      },
+    ],
   },
   plugins: [
-    new CleanWebpackPlugin(),// 使用插件
+    new CleanWebpackPlugin(), // 使用插件
     new HtmlWebpackPlugin({
-      title: 'ceshi',
+      title: "ceshi",
       meta: {
-          viewport: 'width=device-width'
+        viewport: "width=device-width",
       },
-      template: './src/index.html'
-  })
-]
-}
+      template: "./src/index.html",
+    }),
+    new ArchivePlugin(),
+  ],
+};
