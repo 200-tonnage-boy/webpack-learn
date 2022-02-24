@@ -1,4 +1,4 @@
-const { AsyncParallelHook } = require('./tapable');
+const { AsyncParallelHook } = require('tapable');
 const hook = new AsyncParallelHook(["name"]);
 /* console.time('cost');
 hook.tapAsync('1', (name, callback) => {
@@ -25,7 +25,8 @@ hook.callAsync('zhufeng', (err) => {
 }); */
 
 console.time('cost');
-debugger
+// debugger
+// 如果用tapAsync的话最终结束的回调就不会执行了，应该是类似于all的原理
 hook.tapPromise('1', (name) => {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -50,7 +51,7 @@ hook.tapPromise('3', (name,) => {
         }, 3000);
     });
 });
-debugger
+// debugger
 hook.promise('zhufeng').then(() => {
     console.log('done');
     console.timeEnd('cost');

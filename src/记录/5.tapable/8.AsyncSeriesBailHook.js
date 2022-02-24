@@ -24,7 +24,11 @@ hook.callAsync('zhufeng', (err) => {
     console.timeEnd('cost');
 }); */
 
-
+// 1
+// 2
+// done
+// cost: 3.024s
+// 注意和paralle 熔断的区别，这里不会再done后再输出3
 console.time('cost');
 hook.tapPromise('1', (name) => {
     return new Promise((resolve) => {

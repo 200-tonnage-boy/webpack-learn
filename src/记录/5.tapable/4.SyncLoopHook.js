@@ -3,6 +3,7 @@ const { SyncLoopHook } = require('tapable');
  * 每次都是从头开始循环执行的
  * 有返回值就从头开始执行,如果没有返回值就执行下一个
  */
+// 执行3*5 15次
 const hook = new SyncLoopHook();
 let counter1 = 0, counter2 = 0, counter3 = 0;
 hook.tap('1', () => {

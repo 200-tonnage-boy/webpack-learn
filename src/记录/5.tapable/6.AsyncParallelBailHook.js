@@ -25,6 +25,14 @@ hook.callAsync('zhufeng', (err) => {
 }); */
 
 
+
+// 1
+// 2
+// done
+// cost: 2.004s
+// 3
+// 注意这里的熔断，只是在有返回值的时候就调用结束的回调，剩下的那个还是在执行，因为是paralle并行，只是会丢弃结果
+
 console.time('cost');
 hook.tapPromise('1', (name) => {
     return new Promise((resolve) => {

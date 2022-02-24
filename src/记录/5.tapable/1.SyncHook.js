@@ -1,6 +1,6 @@
-const { SyncHook } = require('./tapable');
-debugger
-const hook = new SyncHook(["name", "age"]);
+const { SyncHook } = require('tapable');
+
+const hook = new SyncHook(["name", "age"]);// 个数有用，内容没用
 hook.tap('1', (name, age) => {
     console.log(1, name, age);
     //不关心返回值
@@ -18,7 +18,7 @@ hook.tap('3', (name, age) => {
     //不关心返回值
     return 3;
 })
-hook.call('zhufeng', 13);
+hook.call('测试', 13);
 
 
 

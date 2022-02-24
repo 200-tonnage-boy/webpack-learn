@@ -24,7 +24,12 @@ hook.callAsync('zhufeng', (err) => {
     console.timeEnd('cost');
 }); */
 
-
+// 1
+// 2
+// 3
+// done
+// cost: 6.028s
+// 注意串行这里是6秒，
 console.time('cost');
 hook.tapPromise('1', (name) => {
     return new Promise((resolve) => {

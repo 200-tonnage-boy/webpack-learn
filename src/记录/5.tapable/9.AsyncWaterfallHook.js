@@ -24,6 +24,11 @@ hook.callAsync('zhufeng', (err) => {
     console.timeEnd('cost');
 }); */
 
+// 1 zhufeng
+// 2 A
+// 3 B
+// done C
+// cost: 6.024s
 
 console.time('cost');
 hook.tapPromise('1', (name) => {
